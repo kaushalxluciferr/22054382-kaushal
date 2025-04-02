@@ -1,20 +1,21 @@
 import React,{useEffect,useState} from "react";
 import {fetchUsers,fetchPosts} from "../services/api";
-const Feed =()=>{
+const Feed=()=>
+    {
 const [posts,setposts]=useState([]);
-useEffect(() => {
+useEffect(()=>
+    {
     const getFeed=async()=>
         {
       const users=await fetchUsers();
-      let allPosts=[];
-
-      for (const userId in users)
-         {
-        const userPosts=await fetchPosts(userId);
-        allPosts=[...allPosts, ...userPosts];
+      let alpost=[];
+      for(const userId in users)
+        {
+        const usrposts=await fetchPosts(userId);
+        alpost=[...alpost, ...usrposts];
 }
-      allPosts.sort((a,b)=>b.id-a.id);
-      setposts(allPosts);    };
+      alpost.sort((a,b)=>b.id-a.id);
+      setposts(alpost);    };
     getFeed();
     const interval=setInterval(getFeed, 5000);
     return ()=>clearInterval(interval);
