@@ -1,6 +1,5 @@
 import {useEffect,useState} from "react";
 import {fetchUsers,fetchPosts,fetchComments} from "../services/api";
-import "../styles/global.css";
 
 const TrendingPosts=()=>
     {

@@ -1,8 +1,7 @@
 import React,{useEffect,useState} from "react";
 import {fetchUsers,fetchPosts} from "../services/api";
-import "../styles/global.css";
 const Feed =()=>{
-const [posts,setPosts]=useState([]);
+const [posts,setposts]=useState([]);
 useEffect(() => {
     const getFeed=async()=>
         {
@@ -15,7 +14,7 @@ useEffect(() => {
         allPosts=[...allPosts, ...userPosts];
 }
       allPosts.sort((a,b)=>b.id-a.id);
-      setPosts(allPosts);    };
+      setposts(allPosts);    };
     getFeed();
     const interval=setInterval(getFeed, 5000);
     return ()=>clearInterval(interval);

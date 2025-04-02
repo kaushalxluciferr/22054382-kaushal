@@ -1,7 +1,5 @@
 import {useEffect,useState} from "react";
 import {fetchUsers,fetchPosts} from "../services/api";
-import "../styles/global.css";
-
 const TopUsers=()=>
      {
   const [tuser,settuser]=useState([]);
